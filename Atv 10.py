@@ -3,7 +3,7 @@ amigos = {"Ana": {"Bruno", "Carla"}, "Bruno": {"Ana", "Diego"}, "Carla": {"Ana",
 Crie uma função sugerir(pessoa) que retorne os “amigos de amigos” que a pessoa ainda não tem como amigo e que não sejam ela mesma.
 Crie também em_comum(p1, p2) que retorne os amigos em comum de duas pessoas.
 Exemplo: sugerir("Ana") → {"Diego", "Eva"}'''
-def recomendados (amigos,pessoa):
+def recomendados (amigos,pessoa):#
     sugestao = []
     visto = set()
     print(f"-- Usuario: {pessoa}")
