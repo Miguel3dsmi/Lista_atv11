@@ -3,5 +3,4 @@ frutas = ("Maça","Amora","Abacaxi","Banana","Limão")
 print(frutas[0])
 print(frutas[-1])
 print(len(frutas))
-for i in range(3):
-    print(f"{frutas[i]} ", end="")
+print(frutas[:3])

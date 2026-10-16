@@ -3,7 +3,7 @@ amigos = {"Ana": {"Bruno", "Carla"}, "Bruno": {"Ana", "Diego"}, "Carla": {"Ana",
 Crie uma função sugerir(pessoa) que retorne os “amigos de amigos” que a pessoa ainda não tem como amigo e que não sejam ela mesma.
 Crie também em_comum(p1, p2) que retorne os amigos em comum de duas pessoas.
 Exemplo: sugerir("Ana") → {"Diego", "Eva"}'''
-def recomendados (amigos,pessoa):#
+def recomendados (amigos,pessoa):
     sugestao = []
     visto = set()
     print(f"-- Usuario: {pessoa}")
@@ -19,21 +19,20 @@ def recomendados (amigos,pessoa):#
                     if amigos_de_amigos not in amigos[usuario] and amigos_de_amigos != pessoa and amigos_de_amigos not in visto:
                         sugestao.append(amigos_de_amigos)
                         visto.add(amigos_de_amigos)
-                    else:
-                        continue
-        else:
-            continue
-        print()
+    print()
     return sugestao
 
 def em_comum(amigos, pessoa):
     marco = set()
     for usuario in amigos:
-        igual = []
-        visto = set()
         if usuario == pessoa:
             for lista_amigos in amigos[usuario]:
                 marco.add(lista_amigos)
+    for usuario in amigos:
+        igual = []
+        visto = set()
+        if usuario == pessoa:
+            continue
         else:
             for lista_amigos in amigos[usuario]:
                 if lista_amigos in marco:
@@ -41,14 +40,14 @@ def em_comum(amigos, pessoa):
                         igual.append(lista_amigos)
                         visto.add(lista_amigos)
             if igual:
-                print(f"Os amigos em comum entre {alvo} e {usuario} são: {igual}")
+                print(f"Os amigos em comum entre {pessoa} e {usuario} são: {igual}")
             else:
-                print(f"{alvo} e {usuario} Não possuem amigos em comum.")
+                print(f"{pessoa} e {usuario} Não possuem amigos em comum.")
     print()
 
 social = {"Ana": {"Bruno", "Carla"},
           "Bruno": {"Ana", "Diego"},
-          "Carla": {"Ana", "Diego", "Eva"},''
+          "Carla": {"Ana", "Diego", "Eva"},
           "Diego": {"Bruno", "Carla"},
           "Eva": {"Carla"}}
 
