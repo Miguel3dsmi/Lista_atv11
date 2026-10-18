@@ -9,7 +9,7 @@ pessoas_organizada = sorted(pessoas, key=lambda p: (p[1], p[0]))
 print(f"Lista organizada em ordem de idade: {pessoas_organizada}")
 
 po_cidade = defaultdict(set)
-for nome, idade, cidade in pessoas:
+for nome, _, cidade in pessoas:
     po_cidade[cidade].add(nome)
 cidades = dict(po_cidade)
 

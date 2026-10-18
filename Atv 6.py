@@ -5,6 +5,6 @@ x = int(input("informe o valor de X: "))
 y = int(input("informe o valor de Y: "))
 coordenadas = (x,y)
 if coordenadas in locais:
-    print(f"{locais[coordenadas]} encontrada.")
+    print(f"Local: {locais[coordenadas]}.")
 else:
-    print(f"Coordenadas não encontrada no dicionário.")
+    print("Coordenadas não encontrada no dicionário.")
